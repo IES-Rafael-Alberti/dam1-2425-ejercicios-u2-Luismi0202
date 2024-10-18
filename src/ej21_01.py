@@ -8,24 +8,43 @@ Función para ingresar un valor y que este sea retornado a variable
 def introducir_edad(valor):
     valor = input()
     return valor
+"""
+Función que mira si el número es negativo
+"""
+def si_negativo(num:float):
+    valor= 0
+    while num <1:
+        print("Chaval tu edad no puede ser negativa... Dimela de verdad")
+        num = introducir_edad(valor)
+        si_igual_num= comprobar_si_num(num)
+        while not si_igual_num:
+            print("No me mientas chaval, dime cuantos años tienes")
+            num =introducir_edad(valor)
+            si_igual_num=comprobar_si_num(num)
+        num = float(num) 
+    return num
+"""
+Función que mira si el número es decimal. TE PERMITO DEJAR DECIMALES PORQUE LUEGO REDONDEO...
+"""
+def si_decimal(num:float):
+    if num %1 == 0:
+        return False 
+    else: 
+        return True 
 
 """
-Variable que comprueba si el valor introducido
+Función que comprueba si el valor introducido
 es realmente un número.
 """
 def comprobar_si_num(valor:str):
-    valor.strip
-    if valor.count(".")>=1:
-        return False 
-    elif valor.count("-")>1:
+    try:
+        float(valor)
+        return True
+    except ValueError:
         return False
-    elif valor.find("-"):
-        valor = valor[0:]
-        valor = valor.replace("-","")
-        return valor.isdigit()
 
 """
-Variable que comprueba si el usuario
+Función que comprueba si el usuario
 es mayor de edad. Dependiendo de lo que sea devolverá
 un valor u otro.
 """
@@ -49,16 +68,20 @@ def main():
     print("¡Te invito a una cer-! Espera, ¿CUÁNTOS AÑOS TIENES?")
     num = introducir_edad(valor)
     si_igual_num = comprobar_si_num(num)
-    if si_igual_num == True:
+    while not si_igual_num:
+        print("No me mientas chaval, dime cuantos años tienes")
+        num =introducir_edad(valor)
+        si_igual_num=comprobar_si_num(num)
+    num = float(num)
+    num =si_negativo(num)
+    if si_decimal(num)== True:
+        if num >=17.5:
+            num = 17
+        else:
+            num = round(float(num))
         print(mayor_de_edad(num))
     else:
-        while si_igual_num== False:
-            print("No me mientas chaval, dame un número...")
-            num = introducir_edad(valor)
-            si_igual_num= comprobar_si_num(num)
-            if si_igual_num == True:
-                print(mayor_de_edad(num))
-
+        print(mayor_de_edad(num))
 
 if __name__ == "__main__":
     main()
