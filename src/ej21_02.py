@@ -7,7 +7,7 @@ def introducir_número():
     return num
 
 def es_num(valor:str):
-    valor = valor.strip
+    valor = valor.strip()
     if valor.count("-")>1:
         return False
     elif valor.count(".")>1:
@@ -18,11 +18,11 @@ def es_num(valor:str):
 def es_negativo_o_decimal(num):
     while num <0 or num%2==1:
         print("ERROR, INTRODUCE UN NÚMERO QUE SEA POSITIVO")
-        valor= introducir_número
+        valor= introducir_número()
         num = es_num(valor)
         while num == False:
             print("DAME UN NÚMERO VÁLIDO")
-            valor = introducir_número
+            valor = introducir_número()
             num= es_num(valor)
         num = float(valor)
     return num
@@ -33,7 +33,7 @@ def cadena(num):
         if i == num:
             serie=serie + str(i) + "."
         elif i %2 == 1:
-            serie=serie + str(i) + ","
+            serie=serie + str(i)+","
         elif i %2== 0:
             i = "par"
     return serie
@@ -44,7 +44,7 @@ def main():
     num = es_num(valor)
     while num == False:
         print("DAME UN NÚMERO VÁLIDO")
-        valor = introducir_número
+        valor = introducir_número()
         num = es_num(valor)
     num = float(valor)
     es_negativo_o_decimal(num)
