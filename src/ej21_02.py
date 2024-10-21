@@ -13,6 +13,8 @@ def es_num(valor:str):
     elif valor.count(".")>1:
         return False
     elif valor.startswith("-"):
+        return valor.lstrip("-").isdigit()
+    else:
         return valor.isdigit()
 
 def es_negativo_o_decimal(num):
@@ -25,7 +27,7 @@ def es_negativo_o_decimal(num):
             valor = introducir_número()
             num= es_num(valor)
         num = float(valor)
-    return num
+    return int(num)
 
 def cadena(num):
     serie = ""
@@ -47,8 +49,7 @@ def main():
         valor = introducir_número()
         num = es_num(valor)
     num = float(valor)
-    es_negativo_o_decimal(num)
-    num = int(num)
+    num = es_negativo_o_decimal(num)
     print(f"AQUÍ TIENES LOS NÚMEROS IMPARES HASTA ESE NÚMERO: \n {cadena(num)}")
 
 
