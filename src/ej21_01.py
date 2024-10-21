@@ -8,6 +8,7 @@ Función para ingresar un valor y que este sea retornado a variable
 def introducir_edad(valor):
     valor = input()
     return valor
+
 """
 Función que mira si el número es negativo
 """
@@ -23,6 +24,7 @@ def si_negativo(num:float):
             si_igual_num=comprobar_si_num(num)
         num = float(num) 
     return num
+
 """
 Función que mira si el número es decimal. TE PERMITO DEJAR DECIMALES PORQUE LUEGO REDONDEO...
 """
