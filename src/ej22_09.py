@@ -43,9 +43,9 @@ def main():
         contador = contador + 1
         print(f"**ERROR** Inténtalo de nuevo, tienes {3-contador} intentos")
         c_introducida = introduzca_contraseña()
-        if contador ==3:
+        if contador ==3 and contraseña != c_introducida:
             print("Se acabaron tus intentos... Hasta pronto")
-    if comprobar_contraseña == True:
+    if comprobar_contraseña(c_introducida,contraseña) == True:
         print("Bienvenido de nuevo,usuario")
 
 
