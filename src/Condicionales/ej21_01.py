@@ -53,7 +53,7 @@ un valor u otro.
 def mayor_de_edad(num):
     num = int(num)
     if num <18:
-        return"lo siento eres menor adiós *se va*"
+        return "lo siento eres menor adiós *se va*"
     else:
         return "¡¡PERFECTO, ERES MAYOR DE EDAD!!¡¡VAMONOS A POR CERVEZA!!"
 

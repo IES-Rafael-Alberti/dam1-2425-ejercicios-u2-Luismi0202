@@ -33,7 +33,7 @@ Función que dice si tributas o no dependiendo
 del dinero y la edad que tengas.
 """
 def tributa(años,dinero):
-    if años <=16 or dinero <1000:
+    if años <16 and dinero <1000:
         return "LO SENTIMOS, USTED NO TRIBUTAS"
     else: 
         return "¡¡EHNORABUENA!! USTED TRIBUTA"
