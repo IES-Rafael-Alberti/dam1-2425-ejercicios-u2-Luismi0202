@@ -57,8 +57,8 @@ Nada, se imprime en función.
 """
 def capital_obtenido(cant_invertir,interes_anual,num_años):
     for i in range (1, num_años+1):
-        cant_invertir *= (1+interes_anual/100)
-        return f"En {num_años} año obtendrá un capital de: {cant_invertir:.2f}€"
+        cant_invertir= i*(1+interes_anual/100)
+        print(f"En {i} años obtendrá un capital de: {cant_invertir:.2f}€")
 
 
 
@@ -89,7 +89,7 @@ def main():
     while num_años == False:
         print("**ERROR** El número de años tiene que ser un número entero positivo.\n Vuelve a introducir:")
 
-    print(capital_obtenido(cant_invertir,interes_anual,num_años))
+    capital_obtenido(cant_invertir,interes_anual,num_años)
 
 
 

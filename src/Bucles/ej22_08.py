@@ -1,3 +1,6 @@
+#Ejercicio 2.2.8
+#Escribir un programa que pida al usuario un número entero y muestre por pantalla un triángulo rectángulo como el de más abajo.
+
 """
 Args:
 num = input()-> Input para que el usuario meta un número
