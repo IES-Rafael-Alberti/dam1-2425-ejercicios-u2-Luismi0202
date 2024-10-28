@@ -28,7 +28,8 @@ def comprobar_num(valor):
         valor = int(valor)
         if valor <0:
             return False
-        else: return True
+        else: 
+            return True
     except ValueError:
         return False
 
