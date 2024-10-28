@@ -6,32 +6,34 @@ Creación de tupla para declarar números.
 """
 numeros = ["1","2","3","4","5","6","7","8","9"]
 
-"""
+
+def introduce_frase():
+    """
 Función donde usuario introduce una frase.
 
-Args:
+Arg:
 Input para poner frase
 
-Returs:
+Returns:
 La frase que hayas puesto
 """
-def introduce_frase():
     frase = input()
     return frase
 
-"""
+
+def introduce_letra():
+    """
 Función de introducir letra.
 
-Args:
+Arg:
 Mientras no sea letra, se hará un bucle donde tendras que introducir la letra.
 Si se ve que hay mas de una letra, te dara un error porque se pide una.
 Si se ve que la letra es un número, te dara error porque no admite nuemreos.
 Si no se cumple ninguna, se saldrá del bucle y te devolverá la letra.
 
-Retuns:
+Returns:
 La letra en minúscula para poder contar el valor en la frase en minúsculas.
 """
-def introduce_letra():
     es_letra = False
     while not es_letra:
         letra = input()
@@ -46,6 +48,17 @@ def introduce_letra():
 
 
 def encontrar_letra(frase:str,letra):
+    """
+    Función para encontrar la letra que quieras en una frase.
+    Arg:
+    Se crean dos variables acumulables que irán metiendo si una posición tiene coincidencia con la letra o no.
+    Para cada caracter en la frase se hará un contador que irá sumando la posición. 
+    Si el caracter del bucle coincide con el de la letra que queremos buscar, se dirá en que posición esta y que hay coincidencia.
+    Sino, te dirá la posición y que no la encontró.
+
+    Returns:
+    Devuelve ambas cadenas de caracteres con saltos de línea
+    """
     coincidencia = ""
     nocoincidencia = ""
     posicion = 0
@@ -58,13 +71,14 @@ def encontrar_letra(frase:str,letra):
             nocoincidencia +=f"No se encontró una coincidencia en el caracter {caracter} EN POSICIÓN {posicion} \n"
     return coincidencia + nocoincidencia
 
-"""
+
+def main():
+    """
 Función principal.
 Pide una frase, se va a la función de introducir frase.
 Luego pide una letra y se va a la función de pedir letra.
 Imprime por pantalla la función encontrar letra.
 """
-def main():
     print("Dame una frase")
     frase = introduce_frase()
     print("Dame una letra")

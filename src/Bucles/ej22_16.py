@@ -1,7 +1,9 @@
 #Ejercicio 2.2.16
 #Leer números enteros positivos de teclado, hasta que el usuario ingrese el 0. Informar cuál fue el mayor número ingresado.
 
-"""
+
+def introduce_num():
+    """
 Función para que el usuario introduzca un número entero positivo.
 
 Args:
@@ -14,7 +16,6 @@ Si el número no es une entero, el programa le asignara el error correspondiente
 Returns:
 Devuelve el número entero positivo.
 """
-def introduce_num():
     fin = False 
     while fin== False:
         num = input()
@@ -29,14 +30,15 @@ def introduce_num():
             fin = False
 
 
-"""
+
+def main():
+    """
 Función principal.
 Pide que le ingreses varios números hasta que le digas 0 (en ese caso dejará de pedir numeros)
 Si el número es otro distinto a 0, mirará si es mayor a la variable contador y en ese caso, se sumará a la variable contador para poder usarse como comprobante.
 Si no es mayor, no pasará nada con ese número, pero si es mayor que el número introducido anteriormente, se reseteará la variable contador y se almacenará el número.
 Se imprimirá por pantalla la variable contador, donde esta introducido el número más alto.
 """
-def main():
     print("Ingresame varios números ENTEROS POSITIVOS y te dire cual es el mayor. \n SI INTRODUCES 0, DEJARAS DE INTRODUCIR NÚMEROS")
     si_es0= False
     contador=0

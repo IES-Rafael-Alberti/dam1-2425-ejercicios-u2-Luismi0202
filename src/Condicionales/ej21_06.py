@@ -7,26 +7,29 @@ Tupla para indicar los dos sexos que se pueden poner.
 SEXOS = ["hombre","mujer"]
 
 
-"""
+
+def introduce_nombre():
+    """
 Función de introducir nombre.
 Retorna nombre.
 """
-def introduce_nombre():
     nom = input()
     return nom
 
-"""
+
+def introduce_sexo():
+    """
 Función de introducir sexo.
 Retorna sexo.
 """
-def introduce_sexo():
     sexo= input()
     return sexo
-"""
+
+def comprobar_si_num(valor:str):
+    """
 Función que comprueba si el valor introducido
 es un número.
 """
-def comprobar_si_num(valor:str):
     valor= valor.strip()
     if valor.startswith("-"):
         return valor.lstrip("-").isdigit()
@@ -35,13 +38,14 @@ def comprobar_si_num(valor:str):
     else: 
         return valor.replace(".","").isdigit()
     
-"""
+
+def grupo(sexo:str,nombre:str):
+    """
 Función que mirará la inicial de tu nombre y la comparará
 más tarde en mayúsculas con la letra correspondiente que pida el
 enunciado. Según si empieza con esa inicial o no,
 o si es hombre o mujer, pertenecerá a un grupo u otro.
 """
-def grupo(sexo:str,nombre:str):
     nombre_inicial = nombre[0:]
     if sexo.lower()== "hombre":
         if nombre_inicial.upper() < "N":
@@ -54,13 +58,14 @@ def grupo(sexo:str,nombre:str):
         else:
             return "Usted está en el grupo B"
 
-"""
+
+def main():
+    """
 Función principal. Si uno de los dos es un número,
 te dará un error. Si el sexo no es hombre o mujer, 
 te dará un error. De cumplirse todo correctamente,
 te dirá el grupo al que perteneces.
 """ 
-def main():
     print("Dame tu nombre")
     nombre = introduce_nombre()
     print("Dime tu sexo")

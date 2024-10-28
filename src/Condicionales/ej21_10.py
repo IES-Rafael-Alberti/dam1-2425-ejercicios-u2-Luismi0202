@@ -4,20 +4,23 @@
 Ingredientes no vegetarianos: Peperoni, Jamón y Salmón."""
 #Escribir un programa que pregunte al usuario si quiere una pizza vegetariana o no, y en función de su respuesta le muestre un menú con los ingredientes disponibles para que elija. Solo se puede eligir un ingrediente además de la mozzarella y el tomate que están en todas la pizzas. Al final se debe mostrar por pantalla si la pizza elegida es vegetariana o no y todos los ingredientes que lleva.
 
-"""
-Args:
+
+def introduce_valor():
+    """
+Arg:
 tipo = input() -> Poner el tipo de pizza o ingrediente
 
 Returns: 
 tipo = el tipo de pizza o ingrediente introducido
 """
-def introduce_valor():
     tipo = input()
     return tipo 
 
 
-"""
-Args:
+
+def ingredientes(tipo:str):
+    """
+Arg:
 if tipo.lower() == vegetariana -> Si es vegetariana...
 if tipo.lower() == no vegetariana -> Si no es vegetariana...
 
@@ -26,7 +29,6 @@ pimiento y tofu si es vegetariana,
 peperoni,jamon y salmon si es no vegetariana
 Error -> Si no es ninguna de las dos devolvera un valor llamado error
 """
-def ingredientes(tipo:str):
     if tipo.lower() == "vegetariana":
         return "Pimiento, tofu"
     elif tipo.lower() == "no vegetariana":
@@ -35,8 +37,10 @@ def ingredientes(tipo:str):
         tipo = "Error"
         return tipo
 
-"""
-Args:
+
+def selección_ingredientes(tipo:str,ingrediente:str):
+    """
+Arg:
 if tipo.lower()== vegetariana -> Si es vegetariana...
     if ingrediente.lower() == "pimiento" or "tofu" -> si es uno de estos ingredientes...
 if tipo.lower()== no vegetariana -> Si es no vegetariana...
@@ -45,7 +49,6 @@ if tipo.lower()== no vegetariana -> Si es no vegetariana...
 Returns:
 Puede retornar o ingrediente o falso dependiendo de si el valor es uno de los que se te piden o no
 """
-def selección_ingredientes(tipo:str,ingrediente:str):
     if tipo.lower() == "vegetariana":
         if ingrediente.lower()== "pimiento" or ingrediente.lower()=="tofu":
             return ingrediente
@@ -58,14 +61,15 @@ def selección_ingredientes(tipo:str,ingrediente:str):
             return "Error"
 
 
-"""
+
+def main():
+    """
 Función principal. Pide que pizza quieres, la introduces a través de una función.
 Si le has introducido una de las dos que te dicen seguirá comprobando otras cosas, sino,
 te dara un error. Luego te pedirá ingrediente y pasará lo mismo, si le das uno de los que te da,
 no pasará nada, de lo contrario, dará error.
 La función acabara con un print a el tipo de pizza, al ingrediente elegido y una cadena de caracteres.
 """
-def main():
     print("ESCRIBA: ¿Que pizza quieres? \n A)Vegetariana (Escriba vegetariana) \n B)No vegetariana (Escriba no vegetariana)")
     tipo = introduce_valor()
     while ingredientes(tipo) == "Error":

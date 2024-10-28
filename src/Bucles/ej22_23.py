@@ -7,45 +7,48 @@ Tupla para declarar digitos numéricos.
 numeros = ["0","1","2","3","4","5","6","7","8","9"]
 
 
-"""
+
+def introduce_libro():
+    """
 Función para introducir el nombre de un libro:
 
-Args:
+Arg:
 input donde usuario introduce libro. Cada vez que introduzca el libro, saldra delante la palabra "Libro"
 
 Returns:
 Devuelve el nombre del libro introducido
 """
-def introduce_libro():
     libro = input("Libro:")
     return libro
 
-"""
+
+def contar_digitos(libro):
+    """
 Función que sirve para contar los digitos numericos del libro introducido.
 
-Args:
+Arg:
 Se declara una variable acumulable.
 Para cada caracter de la cadena de caracteres libros se hace un bucle hasta que termine de ir caracter a caracter.
 Si el caracter esta en la tupla numeros, se suma 1 a la variable digitos.
 
-Returs:
+Returns:
 Al final, se devolverá la variable digitos que tendrá de resultado todos los digitos numéricos de la cadena de caracteres
 """
-def contar_digitos(libro):
     digitos = 0
     for caracter in str(libro):
         if caracter in numeros:
             digitos+=1
     return digitos
         
-"""
+
+def main():
+    """
 Función principal.
 Mientras fin sea falso, te pedirá introducir un titulo de libro.
 Si lo que introduces es una barra (/), la linea se completará y te contará el numero de digitos de esta, luego volvera a pasarse a 0 para volver a sumarse en la siguiente linea.
 Si lo que introduces es una estrella (*), entonces finalizará el bucle y te dirá cuantas lineas completas se han leido.
 Si introduces el titulo de un libro, mirará cuantos digitos numericos tiene el libro con la función contar digitos. Este numero se almacenara en la variable digitos.
 """
-def main():
     fin = False 
     digitos = 0
     lineas = 0

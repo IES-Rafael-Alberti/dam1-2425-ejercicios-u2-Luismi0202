@@ -3,10 +3,11 @@
 #EXTRA: CALCULAR EXCEPCIONES SI LA EDAD NO ES POSITIVA, ES IGUAL A 0 O ES MAYOR QUE 125.
 
 
-"""
+
+def pedir_edad():
+    """
 Función que pide edad.
 """
-def pedir_edad():
     fin = False
     while fin == False:
         try:
@@ -23,10 +24,11 @@ def pedir_edad():
             print(f"ERROR, {e} DAME UN NÚMERO VÁLIDO")            
             fin = False
 
-"""
+
+def mostrar_años_cumplidos(edad:int):
+    """
 Función que mostrará los años cumplidos.
 """
-def mostrar_años_cumplidos(edad:int):
     serie = ""
     for i in range (1,edad+1):
         if i == edad:
@@ -36,10 +38,11 @@ def mostrar_años_cumplidos(edad:int):
     return serie
 
 
-"""
+
+def main():
+    """
 Función principal
 """
-def main():
     print("Dame tu edad")
     edad = pedir_edad()
     contador= mostrar_años_cumplidos(edad)

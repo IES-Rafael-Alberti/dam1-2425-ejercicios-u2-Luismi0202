@@ -11,20 +11,22 @@ Más de 60000€	        45%
 #Escribir un programa que pregunte al usuario su renta anual y muestre por pantalla el tipo impositivo que le corresponde.
 
 
-"""
+
+def introduce_num():
+    """
 Función que sirve para introducir num
 Retorna ese num
 """
-def introduce_num():
     num = input()
     return num
 
 
-"""
+
+def comprobar_si_num(valor:str):
+    """
 Función que sirve para comprobar si es num.
 Retorna booleano
 """
-def comprobar_si_num(valor:str):
     valor= valor.strip()
     if valor.startswith("-"):
         return valor.lstrip("-").isdigit()
@@ -34,20 +36,22 @@ def comprobar_si_num(valor:str):
         return valor.replace(".","").isdigit()
 
 
-"""
+
+def comprobar_negativo(num):
+    """
 Función que sirve para comprobar si es negativo.
 Retorna booleano.
 """
-def comprobar_negativo(num):
     if num < 0:
         return True
     else: 
         return False
-"""
+
+def renta(num):
+    """
 Función que sirve para comparar números.
 Retorna el tipo de impositivo en función del número de la renta.
 """
-def renta(num):
     if num <10000:
         return "Su tipo de impositivo es del 5%"
     elif num >=10000 and num <20000:
@@ -59,7 +63,9 @@ def renta(num):
     elif num >60000:
         return "Su tipo impositivo es del 45%"
 
-"""
+
+def main():
+    """
 Función principal.
 Comprueba si el num es un num, si no lo es da error,
 de lo contrario, mirará si el numero es negativo,
@@ -67,7 +73,6 @@ si lo es dará error. Finalmente, imprimirá por pantalla
 el tipo de renta que tengamos en función del return
 de venta.
 """
-def main():
     print("Dime tu renta anual")
     num = introduce_num()
     si_es_num = False

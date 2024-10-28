@@ -8,19 +8,22 @@ Meritorio   	0.6 o más
 """
 #Escribir un programa que lea la puntuación del usuario e indique su nivel de rendimiento, así como la cantidad de dinero que recibirá el usuario.
 
-"""
-Args:
+
+def introduce_puntuación():
+    """
+Arg:
 puntuación: input() donde el usuario escribirá la puntuación
 
 Returns:
 Retorna la puntuación escrita por el usuario
 """
-def introduce_puntuación():
     puntuacion= input()
     return puntuacion
 
-"""
-Args:
+
+def comprobar_si_num(valor:str):
+    """
+Arg:
 valor= valor.strip() -> Quitará los espacios vación de izquierda a derecha para poder contar correctamente.
 if valor.startswith("-") -> Si el valor empieza con guión.
 
@@ -29,7 +32,6 @@ valor.lstrip("-").isdigit() -> Quitará el guión y dirá si el resto son númer
 False -> Retorna booleano (si tiene mas de un punto es falso)
 valor.replace(".","").isdigit() -> Reemplaza el punto si hay solo 1 por un vacío y mira si el resto son números (booleano).
 """
-def comprobar_si_num(valor:str):
     valor= valor.strip()
     if valor.startswith("-"):
         return valor.lstrip("-").isdigit()
@@ -37,8 +39,10 @@ def comprobar_si_num(valor:str):
         return False
     else: 
         return valor.replace(".","").isdigit()
-"""
-Args:
+
+def nivel(num):
+    """
+Arg:
 if num == 0.0 or num <0.4 -> Si el valor es igual a cero o  menor a 0.4...
 if num ==0.4 or num <0.6 -> Si el valor es igual a 0.4 o menor a 0.6...
 if num==0.6 or num >0.6 -> Si el valor es igual o mayor a 0.6...
@@ -48,7 +52,6 @@ Returns:
 Puede devolver 0.0, 0.4 o el número en caso de que sea mayor o igual a seis.
 En caso de ser negativo, devuelve "Error".
 """
-def nivel(num):
     if num == 0.0 or num <0.4:
           return 0.0
     elif num ==0.4 or num <0.6:
@@ -58,18 +61,21 @@ def nivel(num):
     elif num <0.0:
         return "Error" #Devuelve caracteres para usarlo luego en while
 
-"""
-Args:
+
+def dinero(num):
+    """
+Arg:
 cantidad_dinero = 2400 * num -> variable que hará la multiplicación de 2400 por el número para dar el reusltado
 
 Returns: 
 Cadena de caracteres junto a variable cantidad_dinero para luego imprimir esta función
 """
-def dinero(num):
     cantidad_dinero = 2400 * num
     return f"USTED CONSIGUE {cantidad_dinero}€ CADA MES"
 
-"""
+
+def main():
+    """
 Función principal.
 Te pide puntuación, llama a introduce puntuación,
 verifica si los números son negativos o si son decimales,
@@ -77,7 +83,6 @@ en caso de que se produzca algún error, se pide de nuevo el número.
 Al final, el valor se vuelve un float y este se manda a la función nivel
 para ver en que nivel está y se imprimirá esta función.
 """
-def main():
     print("Dame tu puntuación")
     valor = introduce_puntuación()
     si_es_num= False #Bandera 1.

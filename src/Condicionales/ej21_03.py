@@ -2,17 +2,19 @@
 #Escribir un programa que pida al usuario dos números y muestre por pantalla su división. Si el divisor es cero el programa debe mostrar un error.
 
 
-"""
+
+def introducir_números():
+    """
 Función para introducir un número y devolverlo.
 """
-def introducir_números():
     num = input()
     return num
 
-"""
+
+def comprobar_num(valor:str):
+    """
 Función que comprueba si el número es realmente un número.
 """
-def comprobar_num(valor:str):
     valor= valor.strip()
     if valor.startswith("-"):
         return valor.lstrip("-").isdigit()
@@ -21,30 +23,33 @@ def comprobar_num(valor:str):
     else: 
         return valor.replace(".","").isdigit()
 
-"""
+
+def división(num1,num2:float):
+    """
 Función encargada de dividir dos números 
 y devolver esta división.
 """
-def división(num1,num2:float):
     return num1/num2
 
-"""
+
+def divisor_valido(num2):
+    """
 Función que mira si el divisor de la división es válido 
 (en este caso, queremos que no se pueda dividir entre 0 porque no es posible)
 """
-def divisor_valido(num2):
     if num2 == 0:
         return False
     else:
         return True
     
-"""
+
+def main():
+    """
 Función principal. Si uno de los dos números introducidos
 resulta no ser un número, te pedirá que lo vuelvas a introducir. 
 Podrás ver cual de los dos es el que ha fallado y en el paréntesis, 
 podrás ver el dividendo o el divisor para no perderte en la división.
 """
-def main():
     print("¡Dame dos números!")
     num1= introducir_números()
     num2= introducir_números()

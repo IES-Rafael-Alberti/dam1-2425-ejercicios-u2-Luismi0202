@@ -3,25 +3,26 @@
 
 
 
-"""
+def introduce_contraseña():
+    """
 Función donde usuario introduce contraseña.
 
-Args:
+Arg:
 La contraseña introducida será un input donde el usuario pondrá la contraseña.
 
 Returns:
 Devuelve esa contraseña introducida
 """
-def introduce_contraseña():
     contraseña_introducida= input()
     return contraseña_introducida
     
-"""
+
+def main():
+    """
 Función donde te loggeas.
 La contraseña es aguacate.
 El usuario tendra que introducir aguacate de contraseña o si no se levantará un NameError.
 """
-def main():
     contraseña = "aguacate"
     print("Introduzca contraseña")
     contraseña_introducida = introduce_contraseña()

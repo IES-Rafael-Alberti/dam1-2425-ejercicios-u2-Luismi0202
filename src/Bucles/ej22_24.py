@@ -1,10 +1,12 @@
 #Ejercicio 2.2.24
 #Escribir un programa que solicite el ingreso de una cantidad indeterminada de números mayores que 1, finalizando cuando se reciba un cero. Imprimir la cantidad de números primos ingresados.
 
-"""
+
+def introduce_num():
+    """
 Función para quee usuario ingrese números enteros mayores a uno.
 
-Args:
+Arg:
 Si el número introducido es un entero, se mirará si es igual a 0. En caso de serlo, lo devolvera.
 Sin embargo, si es menor a 1 pero no es 0, se levantará un error y se volvera a pedir número.
 Si el número es un entero positivo mayor a 1, también se devolvera número.
@@ -13,7 +15,6 @@ También dará error si no introducimos un número.
 Returns:
 Devuelve el número siempre y cuando sea 0 o mayor a 1
 """
-def introduce_num():
     fin = False
     while not fin:
         num = input()
@@ -29,10 +30,12 @@ def introduce_num():
             print(f"**ERROR**,{e}. Introduce de nuevo:")
             fin = False
 
-"""
+
+def num_primos(num):
+    """
 Función que mira si el número es primo.
 
-Args:
+Arg:
 Se hace un bucle que mirará si el número es divisible entre más numeros que el mismo y 1.
 Si solo se puede dividir entre el mismo y 1, entonces es primo, si no, entonces no es primo.
 
@@ -40,7 +43,6 @@ Returns:
 True en caso de serlo.
 False si no lo es
 """
-def num_primos(num):
     contador = 0
     for i in range(1,num+1):
         if num%i==0:
@@ -51,7 +53,9 @@ def num_primos(num):
         return False
 
 
-"""
+
+def main():
+    """
 Función principal que pide que escribas números enteros mayores que uno.
 Se crea una variable acumulable de los primos que vayamos introduciendo.
 Mientras no haya fin, te pedirá introducir un número.
@@ -61,7 +65,6 @@ Si no es primo, entonces se vuelve a hacer el bucle sin añadir.
 
 Al final, se dirá cuantos números primos hemos introducido.
 """
-def main():
     print("Escribeme números mayores que 1. \n EL PROGRAMA FINALIZA CUANDO ESCRIBAS 0")
     fin = False
     primos = 0
